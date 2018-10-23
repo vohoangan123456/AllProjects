@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ClientApp';
+  title = 'Robert Vo Learning page';
+  getYear() {
+    return new Date().getUTCFullYear();
+  }
+
+  get webTitle(): string {
+    return "Learning Page";
+  }
 }
