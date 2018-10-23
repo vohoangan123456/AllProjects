@@ -1,10 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Languages.Business;
 using Languages.Common;
 using Languages.Common.Interfaces;
-using Languages.Data.Common;
-using Languages.Data.Common.Interfaces;
-using Languages.Data.Query;
-using Languages.DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,8 +12,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
-namespace LearningLanguagesWebApp
+namespace LearningWebApps
 {
     public class Startup
     {
@@ -28,22 +30,16 @@ namespace LearningLanguagesWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
+            services.AddSingleton<IConfiguration>(Configuration);
 
             // Repositories
-            services.AddTransient<IConnectionFactory, ConnectionFactory>();
-            services.AddTransient<ILanguagesConfiguration, LanguagesConfiguration>();
-            services.AddTransient<IApplicationConfigurationManager, ApplicationConfigurationManager>();
-
             services.AddTransient<ICategoriesService, CategoriesService>();
-            services.AddTransient<ICategoriesProcedures, CategoriesProcedures>();
-            services.AddTransient<ICategoriesDatalayer, CategoriesDatalayer>();
+
+            services.AddTransient<IApplicationConfigurationManager, ApplicationConfigurationManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,28 +49,16 @@ namespace LearningLanguagesWebApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
-            });
+            app.UseHttpsRedirection();
+            app.UseMvc();
 
             app.UseSpa(spa =>
             {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
                 spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
@@ -82,6 +66,8 @@ namespace LearningLanguagesWebApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.UseMvc();
         }
     }
 }

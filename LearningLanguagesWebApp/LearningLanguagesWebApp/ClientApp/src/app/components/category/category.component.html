@@ -1,0 +1,14 @@
+<form class="row" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="col-6">
+    <div class="row form-group">
+      <label for="alterCategoryName" class="col-3">Name <span class="required">*</span></label>
+      <input type="text"
+             name="name" [(ngModel)]="model.name"
+             class="form-control col-9"
+             required id="alterCategoryName" />
+    </div>
+  </div>
+  <div class="col-6">
+    <button type="submit" class="btn btn-success float-right">Submit</button>
+  </div>
+</form>

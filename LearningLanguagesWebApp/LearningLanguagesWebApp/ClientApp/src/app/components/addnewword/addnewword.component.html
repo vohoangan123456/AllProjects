@@ -1,0 +1,59 @@
+<form class="row" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="col-6">
+    <div class="row form-group">
+      <label for="alterWord" class="col-3">Word <span class="required">*</span></label>
+      <input type="text"
+             name="word" [(ngModel)]="model.word"
+             class="form-control col-9"
+             required id="alterWord" />
+    </div>
+    <div class="row form-group">
+      <label for="alterType" class="col-3">Type</label>
+      <input type="text"
+             name="type" [(ngModel)]="model.type"
+             class="form-control col-9"
+             id="alterType" />
+    </div>
+    <div class="row form-group">
+      <label for="alterType" class="col-3">Pronunciation</label>
+      <input type="text"
+             name="pronunciation" [(ngModel)]="model.pronunciation"
+             class="form-control col-9"
+             id="alterType" />
+    </div>
+    <div class="row form-group">
+      <label for="alterMeaning" class="col-3">Meaning <span class="required">*</span></label>
+      <input type="text"
+             name="meaning" [(ngModel)]="model.meaning"
+             class="form-control col-9"
+             required id="alterMeaning" />
+    </div>
+    <div class="row form-group">
+      <label for="alterExample" class="col-3">Example</label>
+      <input type="text"
+             name="example" [(ngModel)]="model.example"
+             class="form-control col-9"
+             id="alterExample" />
+    </div>
+    <div class="row form-group">
+      <label for="alterTranslation" class="col-3">Translation</label>
+      <input type="text"
+             name="translation" [(ngModel)]="model.translation"
+             class="form-control col-9"
+             id="alterTranslation" />
+    </div>
+    <div class="row form-group">
+      <label for="alterNote" class="col-3">Note (if yes)</label>
+      <textarea rows="4"
+                name="note" [(ngModel)]="model.note"
+                class="form-control col-9"
+                id="alterNote"></textarea>
+    </div>
+  </div>
+  <div class="col-6">
+    <label class="col-3">add image here</label>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success float-right">Submit</button>
+  </div>
+</form>
