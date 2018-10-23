@@ -2,16 +2,16 @@
 <project name="Local Properties" default="all" xmlns="http://nant.sourceforge.net/release/0.91/nant.xsd">
     <property name="Framework.Path" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319" />
 	
-    <property name="Database.Server.Local" value="VN-ANVO2" />
+    <property name="Database.Server.Local" value="DESKTOP-75QJUEB\ROBERTVOSERVER" />
     <property name="Database.DataSource.Local" value="LanguagesDB" />
     <property name="Database.User.Local" value="sa" />
     <property name="Database.Password.Local" value="Conghieu93" />
 	
 
-    <property name="Database.Server.Staging" value="46.255.16.39" />
-    <property name="Database.DataSource.Staging" value="Handbook_bk" />
-    <property name="Database.User.Staging" value="netpower" />
-    <property name="Database.Password.Staging" value="webPower" />
+    <property name="Database.Server.Staging" value="learninglanguageswebappdbserver.database.windows.net" />
+    <property name="Database.DataSource.Staging" value="LearningLanguagesWebApp_db" />
+    <property name="Database.User.Staging" value="vohoangankl93" />
+    <property name="Database.Password.Staging" value="Vohoangan0913" />
 
 	<property name="Project.Name" value="Netpower.Handbook" />
 	

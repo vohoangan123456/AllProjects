@@ -142,7 +142,7 @@
             <do>
                 <echo message="Script file: ${Database.Script}" />
                 <sql
-					connstring="Provider=SQLNCLI10;${Database.Connection.String.Executing}"
+					connstring="Provider=SQLNCLI11;${Database.Connection.String.Executing}"
 					delimiter="GO"
 					delimstyle="Line"
 					transaction="false"
@@ -226,7 +226,7 @@
                     </otherwise>
                 </choose>
                 <sql
-                    connstring="Provider=SQLNCLI10;${Database.Connection.String.Executing}"
+                    connstring="Provider=SQLNCLI11;${Database.Connection.String.Executing}"
                     delimiter="GO"
                     delimstyle="Line"
                     transaction="false"
