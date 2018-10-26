@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Languages.Business.Entity\Languages.Business.Entity.csproj" />
     <ProjectReference Include="..\Languages.Business\Languages.Business.csproj" />
     <ProjectReference Include="..\Languages.Data.Common\Languages.Data.Common.csproj" />
     <ProjectReference Include="..\Languages.Data.Query\Languages.Data.Query.csproj" />
@@ -34,7 +35,6 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\assets\images\" />
-    <Folder Include="ClientApp\src\app\assets\locale\" />
     <Folder Include="ClientApp\src\app\assets\scripts\" />
   </ItemGroup>
 

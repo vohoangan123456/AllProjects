@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Languages.Business;
+using Languages.Business.Entity;
 using LanguageStudyingWebApps.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,23 +29,24 @@ namespace LanguageStudyingWebApps.Controllers
 
         // GET api/words/5
         [HttpGet("{id}")]
-        public ActionResult<CategoryModel> Get(int id)
+        public ActionResult<Categories> Get(int id)
         {
-            return new CategoryModel();
+            return m_Service.GetCategoryById(id);
         }
 
         // POST api/words
         [HttpPost]
-        public void Post([FromBody] CategoryModel value)
+        public int Post([FromBody] CategoryModel value)
         {
-            var update = value;
-            m_Service.Create(value.ToDomain());
+            var newId = m_Service.Create(value.ToDomain());
+            return newId;
         }
 
         // PUT api/words/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] CategoryModel value)
         {
+            m_Service.Update(value.ToDomain());
         }
 
         // DELETE api/words/5
@@ -54,10 +56,10 @@ namespace LanguageStudyingWebApps.Controllers
         }
 
         [HttpGet("getdata")]
-        public ActionResult<IEnumerable<CategoryModel>> GetCategoriesByFilter()
+        public IEnumerable<CategoryModel> GetCategoriesByFilter()
         {
-            var x = 1;
-            return new List<CategoryModel>();
+            var model = m_Service.GetActiveCategories().Select(x=>new CategoryModel { Id = x.Id, Name=x.Name});
+            return model;
         }
     }
 }

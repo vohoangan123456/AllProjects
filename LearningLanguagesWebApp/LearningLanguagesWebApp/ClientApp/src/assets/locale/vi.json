@@ -1,0 +1,35 @@
+{
+  "Message": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New"
+  },
+  "Error": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New"
+  },
+  "Action": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New",
+    "submit": "Gửi",
+    "create": "Tạo mới",
+    "edit": "Hiệu chỉnh",
+    "delete": "Xóa"
+  },
+  "Label": {
+    "Common": {
+
+    },
+    "Category": {
+      "editCategory": "Hiệu chỉnh category",
+      "createCategory": "Tạo mới category",
+      "deleteCategory": "Xóa category",
+      "title": "Category",
+      "name":  "Tên"
+    },
+    "Notifications": "Notifications",
+    "New": "New"
+  }
+}

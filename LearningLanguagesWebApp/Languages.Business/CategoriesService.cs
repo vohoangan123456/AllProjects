@@ -28,6 +28,11 @@ namespace Languages.Business
             return m_DataLayer.Delete(ids);
         }
 
+        public Categories GetCategoryById(int id)
+        {
+            return m_DataLayer.GetCategoryById(id);
+        }
+
         public IEnumerable<Categories> GetActiveCategories()
         {
             return m_DataLayer.GetActiveCategories();

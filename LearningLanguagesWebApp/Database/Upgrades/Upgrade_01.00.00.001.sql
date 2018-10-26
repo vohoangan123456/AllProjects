@@ -70,6 +70,21 @@ BEGIN
 END
 GO
 
+IF OBJECT_ID('dbo.GetCategoryById', 'p') IS NULL
+    EXEC ('CREATE PROCEDURE dbo.GetCategoryById AS SELECT 1')
+GO
+ALTER PROCEDURE dbo.GetCategoryById
+	@Id INT
+AS
+SET NOCOUNT ON
+BEGIN
+	SELECT Id, [Name]
+	FROM dbo.tblCategories
+	WHERE IsDeleted = 0
+		AND Id = @Id
+END
+GO
+
 IF OBJECT_ID('dbo.GetActiveCategories', 'p') IS NULL
     EXEC ('CREATE PROCEDURE dbo.GetActiveCategories AS SELECT 1')
 GO
@@ -77,7 +92,7 @@ ALTER PROCEDURE dbo.GetActiveCategories
 AS
 SET NOCOUNT ON
 BEGIN
-	SELECT *
+	SELECT Id, [Name]
 	FROM dbo.tblCategories
 	WHERE IsDeleted = 0
 END

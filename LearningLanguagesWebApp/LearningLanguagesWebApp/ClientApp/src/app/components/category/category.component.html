@@ -1,14 +1,63 @@
-<form class="row" #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <div class="col-6">
-    <div class="row form-group">
-      <label for="alterCategoryName" class="col-3">Name <span class="required">*</span></label>
-      <input type="text"
-             name="name" [(ngModel)]="model.name"
-             class="form-control col-9"
-             required id="alterCategoryName" />
+<ng-template #content let-modal class="modal-category">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{labelsLocale.popupTitle | translate}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="row" #f="ngForm">
+      <div class="form-center">
+        <div class="row form-group">
+          <label for="alterCategoryName">{{labelsLocale.name | translate}} <span class="required">*</span></label>
+          <input type="text"
+                 autofocus
+                 (keyup)="$event.keyCode==13 && modal.close()"
+                 name="name" [(ngModel)]="model.name"
+                 class="form-control"
+                 required id="alterCategoryName" />
+        </div>
+      </div>
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="col-6">
+      <button type="submit" class="btn btn-success float-right" (click)="modal.close()">{{labelsLocale.submit | translate}}</button>
     </div>
   </div>
-  <div class="col-6">
-    <button type="submit" class="btn btn-success float-right">Submit</button>
+</ng-template>
+
+<ag-grid-angular #agGrid
+                 style="width: 100%; height: 500px;"
+                 class="ag-theme-balham"
+                 [enableSorting]="true"
+                 [enableFilter]="true"
+                 [rowData]="categoryList"
+                 [columnDefs]="columnDefs"
+                 (gridReady)="onGridReady($event)"
+                 rowSelection="multiple"
+                 (onRowDoubleClicked)="dbClickOnRow($event)"
+                 (selectionChanged)="onSelectionChanged($event)">
+</ag-grid-angular>
+
+<div class="row pt-90">
+  <div class="col-4">
+    <button class="action-button d_green-c" (click)="addNewCategory(content)">
+      <i class="typcn typcn-plus-outline d_green-c"></i>
+      <span class="action-label"> {{labelsLocale.create | translate}}</span>
+    </button>
   </div>
-</form>
+  <div class="col-4">
+    <button class="action-button d_green-c" [disabled]="selectedRow.length != 1" (click)="editCategory(content)">
+      <i class="typcn typcn-edit d_green-c"></i>
+      <span class="action-label"> {{labelsLocale.edit | translate}}</span>
+    </button>
+  </div>
+  <div class="col-4">
+    <button class="action-button d_green-c" [disabled]="selectedRow.length == 0" (click)="askForRemoveCategory()">
+      <i class="typcn typcn-trash d_green-c"></i>
+      <span class="action-label"> {{labelsLocale.delete | translate}}</span>
+    </button>
+  </div>
+</div>

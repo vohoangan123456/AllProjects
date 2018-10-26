@@ -68,6 +68,15 @@ namespace Languages.Data.Query
             }
         }
 
+        public CategoriesDTO GetCategoryById(int id)
+        {
+            return Execute(connection => connection.Query<CategoriesDTO>("[dbo].[GetCategoryById]",
+                new {
+                    Id = id
+                },
+                commandType: CommandType.StoredProcedure)).FirstOrDefault();
+        }
+
         public IEnumerable<CategoriesDTO> GetActiveCategories()
         {
             return Execute(connection => connection.Query<CategoriesDTO>("[dbo].[GetActiveCategories]",

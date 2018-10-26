@@ -36,6 +36,11 @@ namespace Languages.DataLayer
             return m_Procedures.Delete(ids);
         }
 
+        public Categories GetCategoryById(int id)
+        {
+            return m_Procedures.GetCategoryById(id).ToDomain();
+        }
+
         public IEnumerable<Categories> GetActiveCategories()
         {
             return m_Procedures.GetActiveCategories().Select(x => x.ToDomain());

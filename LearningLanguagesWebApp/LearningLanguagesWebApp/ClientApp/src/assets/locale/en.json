@@ -1,0 +1,35 @@
+{
+  "Message": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New"
+  },
+  "Error": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New"
+  },
+  "Action": {
+    "Welcome": "Welcome",
+    "Notifications": "Notifications",
+    "New": "New",
+    "submit": "Submit",
+    "create": "Create",
+    "edit": "Edit",
+    "delete":  "Delete"
+  },
+  "Label": {
+    "Common": {
+
+    },
+    "Category": {
+      "editCategory": "Edit category",
+      "createCategory": "Create new category",
+      "deleteCategory": "Delete categor(y|ies)",
+      "title": "Category",
+      "name":  "Name"
+    },
+    "Notifications": "Notifications",
+    "New": "New"
+  }
+}

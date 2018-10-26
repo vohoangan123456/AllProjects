@@ -8,6 +8,7 @@ namespace Languages.Data.Query
         int Create(CategoriesDTO request);
         bool Update(CategoriesDTO request);
         bool Delete(IEnumerable<int> ids);
+        CategoriesDTO GetCategoryById(int id);
         IEnumerable<CategoriesDTO> GetActiveCategories();
     }
 }

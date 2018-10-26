@@ -1,5 +1,7 @@
 @import 'app/assets/styles/styles-vendor.css';
 @import 'app/assets/styles/sticky-navbar.css';
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 
 body {
   padding: 0;
@@ -39,4 +41,41 @@ a {
   color: red;
   font-weight: 700;
   padding-left: 5px;
+}
+
+.action-button {
+  background-color: white;
+  height: 180px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 0 15px 0;
+  width: 100%;
+  border: 1px solid #333333;
+}
+
+.action-view {
+  background: #fff;
+  padding: 15px 15px 0 15px;
+}
+
+.action-button {
+  background-color: #f2f2f2;
+}
+
+.action-button i {
+  color: #b3b3b3;
+  margin-top: 20px;
+  font-size: 5em;
+}
+.action-button > span {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.action-label{
+  font-weight: 700;
+  font-size: 15px;
+  padding-bottom: 20px;
+  background-color: inherit;
 }

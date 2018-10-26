@@ -16,8 +16,13 @@ export class CategoryService {
   addNewCategory(category: Category) {
     return this.httpClient.post(`${this.API_URL}/api/categories`, category );
   }
-
+  updateCategory(category: Category) {
+    return this.httpClient.put(`${this.API_URL}/api/categories/${category.id}`, category);
+  }
   getCategoriesByFilter() {
-    return this.httpClient.get(`${this.API_URL}/api/categories`);
+    return this.httpClient.get(`${this.API_URL}/api/categories/getdata`);
+  }
+  getCategoryById(id: number) {
+    return this.httpClient.get(`${this.API_URL}/api/categories/${id}`);
   }
 }

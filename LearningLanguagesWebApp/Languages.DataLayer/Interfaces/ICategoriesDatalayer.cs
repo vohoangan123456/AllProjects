@@ -7,6 +7,7 @@ namespace Languages.DataLayer
         int Create(Categories request);
         bool Update(Categories request);
         bool Delete(IEnumerable<int> ids);
+        Categories GetCategoryById(int id);
         IEnumerable<Categories> GetActiveCategories();
     }
 }
