@@ -2,22 +2,40 @@
   <div class="container min-h100 bodynav-bg-color">
     <header class="header">
       <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top topnav-bg-color">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top topnav-bg-color float-right">
         <div class="navbar-right-part">
           <div class="router">
             <ul class="navbar-nav mr-auto">
-              <li routerLinkActive="active" class="mr-10"><a routerLink=""><span class="text-black">Home</span></a></li>
-              <li routerLinkActive="active" class="mr-10"><a routerLink="/addword"><span class="text-black">Add Words</span></a></li>
-              <li routerLinkActive="active" class="mr-10"><a routerLink="/learn"><span class="text-black">Learning</span></a></li>
-              <li routerLinkActive="active" class="mr-10"><a routerLink="/addcategory"><span class="text-black">Add Category</span></a></li>
-              <li routerLinkActive="active" class="mr-10"><a routerLink="/about"><span class="text-black">About Us</span></a></li>
+              <li routerLinkActive="active" class="mr-10"><a routerLink=""><span class="text-black">{{labelsLocale.home | translate}}</span></a></li>
+              <li routerLinkActive="active" class="mr-10"><a routerLink="/addword"><span class="text-black">{{labelsLocale.word | translate}}</span></a></li>
+              <li routerLinkActive="active" class="mr-10"><a routerLink="/learn"><span class="text-black">{{labelsLocale.learn | translate}}</span></a></li>
+              <li routerLinkActive="active" class="mr-10"><a routerLink="/addcategory"><span class="text-black">{{labelsLocale.category | translate}}</span></a></li>
+              <li routerLinkActive="active" class="mr-10"><a routerLink="/about"><span class="text-black">{{labelsLocale.aboutUs | translate}}</span></a></li>
             </ul>
           </div>
         </div>
-        <button (click)="switchLanguage('en')">en</button>
-
-        <button (click)="switchLanguage('vi')">vi</button>
+        
       </nav>
+      <div class="float-right">
+        <span class="fa fa-cog pointer setting-icon" title="{{labelsLocale.setting | translate}}" (click)="toggleSettingPanel()"></span>
+        <div [hidden]="hiddenSetting" class="setting-panel">
+          <div title="{{labelsLocale.language | translate}}" (click)="toggleLanguageSetting()" class="float-right row flag-toggle pointer">
+            <img src="../assets/images/United_Kingdom.png" class="icon-language" *ngIf="selectedEnglish" />
+            <img src="../assets/images/Vietnamese.png" class="icon-language" *ngIf="selectedVietNamese"/>
+            <i class="fa fa-caret-down arrow-language ml-5"></i>
+          </div>
+          <div class="dropdown-language float-right row" [hidden]="hiddenLanguageSetting">
+            <span class="flag-icon-language pointer" (click)="switchLanguage('vi')">
+              <img class="flag-norwegian" src="../assets/images/Vietnamese.png" />
+              {{labelsLocale.vietnamese | translate}}
+            </span>
+            <span class="flag-icon-language pointer" (click)="switchLanguage('en')">
+              <img class="flag-english" src="../assets/images/United_Kingdom.png" />
+              {{labelsLocale.english | translate}}
+            </span>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- Begin page content -->
     <main role="main" class="container main-body">

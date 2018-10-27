@@ -33,6 +33,7 @@
     "@swimlane/ngx-datatable": "^13.0.1",
     "ag-grid-angular": "^19.0.0",
     "ag-grid-community": "^19.0.0",
+    "angular-popper": "^2.0.0",
     "bootstrap": "^3.3.7",
     "bootstrap-datepicker": "^1.8.0",
     "bootstrap-select": "^1.13.1",
@@ -44,6 +45,7 @@
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.0.1",
     "ngx-toasta": "^0.1.0",
+    "popper.js": "^1.14.4",
     "rxjs": "^6.2.2",
     "typicons.font": "^2.0.9",
     "zone.js": "^0.8.26"

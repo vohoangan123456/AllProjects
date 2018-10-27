@@ -55,6 +55,12 @@ namespace LanguageStudyingWebApps.Controllers
         {
         }
 
+        [HttpPost("bulkdelete")]
+        public bool BulkDelete([FromBody] IEnumerable<int> ids)
+        {
+            return m_Service.Delete(ids);
+        }
+
         [HttpGet("getdata")]
         public IEnumerable<CategoryModel> GetCategoriesByFilter()
         {

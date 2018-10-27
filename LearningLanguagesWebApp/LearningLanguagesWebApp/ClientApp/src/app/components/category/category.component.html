@@ -23,7 +23,25 @@
   </div>
   <div class="modal-footer">
     <div class="col-6">
-      <button type="submit" class="btn btn-success float-right" (click)="modal.close()">{{labelsLocale.submit | translate}}</button>
+      <button type="submit" class="btn btn-success float-right" (click)="modal.close()">{{labelsLocale.saveChange | translate}}</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #confirmDelete let-modal class="modal-category">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{labelsLocale.confirmTitle | translate}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <label>{{labelsLocale.confirmDelete | translate}}</label>
+  </div>
+  <div class="modal-footer">
+    <div class="col-6">
+      <button type="submit" class="btn btn float-right" (click)="modal.dismiss('Cancel')">{{labelsLocale.cancel | translate}}</button>
+      <button type="submit" class="btn btn-success float-right mr-10" (click)="modal.close()">{{labelsLocale.ok | translate}}</button>
     </div>
   </div>
 </ng-template>
@@ -55,7 +73,7 @@
     </button>
   </div>
   <div class="col-4">
-    <button class="action-button d_green-c" [disabled]="selectedRow.length == 0" (click)="askForRemoveCategory()">
+    <button class="action-button d_green-c" [disabled]="selectedRow.length == 0" (click)="askForRemoveCategory(confirmDelete)">
       <i class="typcn typcn-trash d_green-c"></i>
       <span class="action-label"> {{labelsLocale.delete | translate}}</span>
     </button>

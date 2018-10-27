@@ -48,7 +48,6 @@ namespace LanguageStudyingWebApps.Controllers
         [HttpGet("getdata")]
         public ActionResult<IEnumerable<WordModel>> GetWordsByFilter()
         {
-            var x = 1;
             return new List<WordModel>();
         }
     }

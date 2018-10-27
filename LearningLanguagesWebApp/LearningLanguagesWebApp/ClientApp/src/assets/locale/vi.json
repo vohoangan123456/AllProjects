@@ -1,35 +1,41 @@
 {
   "Message": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New"
+    "Common": {
+      "confirmDelete": "Bạn có đồng ý xóa các mục đã chọn?"
+    }
   },
   "Error": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New"
   },
   "Action": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New",
     "submit": "Gửi",
     "create": "Tạo mới",
     "edit": "Hiệu chỉnh",
-    "delete": "Xóa"
+    "delete": "Xóa",
+    "saveChange": "Lưu thay đổi",
+    "ok": "Đồng ý",
+    "cancel": "Từ chối"
   },
   "Label": {
     "Common": {
-
+      "confirmTitle": "Xác nhận",
+      "home": "Trang chủ",
+      "word": "Từ mới",
+      "category": "Category",
+      "aboutUs": "Thông tin",
+      "learn": "Học",
+      "vietnamese": "Tiếng Việt",
+      "english": "Tiếng Anh"
     },
     "Category": {
       "editCategory": "Hiệu chỉnh category",
       "createCategory": "Tạo mới category",
       "deleteCategory": "Xóa category",
       "title": "Category",
-      "name":  "Tên"
+      "name": "Tên"
     },
-    "Notifications": "Notifications",
-    "New": "New"
+    "ToolTip": {
+      "setting": "Cài đặt",
+      "language": "Việt Nam"
+    }
   }
 }

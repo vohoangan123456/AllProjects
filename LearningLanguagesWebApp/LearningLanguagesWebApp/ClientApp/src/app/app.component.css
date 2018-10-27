@@ -1,0 +1,35 @@
+.setting-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index:1040;
+}
+.setting-panel {
+  margin-top: 60px;
+  margin-right: 10px;
+  background-color: #ccc;
+  min-width: 200px;
+  height: 50px;
+}
+
+.flag-toggle {
+  padding-top: 17px;
+  padding-right: 20px;
+}
+
+.setting-panel img {
+  height: 21px;
+}
+
+.dropdown-language {
+  margin-top: 55px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.flag-icon-language {
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}

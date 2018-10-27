@@ -45,7 +45,6 @@ namespace LanguageStudyingWebApps.Controllers
         [HttpGet("getdata")]
         public void GetData()
         {
-            var x = 1;
         }
 
     }

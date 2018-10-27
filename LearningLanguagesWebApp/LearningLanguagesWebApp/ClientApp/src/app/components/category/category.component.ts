@@ -20,10 +20,14 @@ export class CategoryComponent implements OnInit {
   labelsLocale = {
     popupTitle: 'Label.Category.editCategory',
     name: 'Label.Category.name',
-    submit: 'Action.submit',
+    saveChange: 'Action.saveChange',
     create: 'Action.create',
     edit: 'Action.edit',
-    delete: 'Action.delete'
+    delete: 'Action.delete',
+    ok: 'Action.ok',
+    confirmTitle: 'Label.Common.confirmTitle',
+    confirmDelete: 'Message.Common.confirmDelete',
+    cancel: 'Action.cancel'
   };
   constructor(private categoryService: CategoryService, private modalService: NgbModal) { }
   ngOnInit() {
@@ -109,10 +113,23 @@ export class CategoryComponent implements OnInit {
   }
 
   public removeCategory() {
-    window.alert('remove category');
+    var deleteIds = [];
+    this.selectedRow.forEach(function (value) {
+      deleteIds.push(value.id);
+    });
+    this.categoryService.deleteMultipleCategories(deleteIds).subscribe((response) => {
+      this.modalService.dismissAll();
+      this.getCategories();
+      this.model = new Category();
+      this.selectedRow = [];
+    });
   }
 
-  public askForRemoveCategory() {
-
+  public askForRemoveCategory(confirmDelete) {
+    this.modalService.open(confirmDelete, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.removeCategory();
+    }, (reason) => {
+      //dismiss action
+    });
   }
 }

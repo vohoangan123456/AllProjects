@@ -1,35 +1,41 @@
 {
   "Message": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New"
+    "Common": {
+      "confirmDelete": "Do you want to delete those selection?"
+    }
   },
   "Error": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New"
   },
   "Action": {
-    "Welcome": "Welcome",
-    "Notifications": "Notifications",
-    "New": "New",
     "submit": "Submit",
     "create": "Create",
     "edit": "Edit",
-    "delete":  "Delete"
+    "delete": "Delete",
+    "saveChange": "Save change",
+    "ok": "OK",
+    "cancel": "Cancel"
   },
   "Label": {
     "Common": {
-
+      "confirmTitle": "Confirmation",
+      "home": "Home",
+      "word": "Word",
+      "category": "Category",
+      "aboutUs": "About us",
+      "learn": "Learn",
+      "vietnamese": "Vietnamese",
+      "english": "English"
     },
     "Category": {
       "editCategory": "Edit category",
       "createCategory": "Create new category",
       "deleteCategory": "Delete categor(y|ies)",
       "title": "Category",
-      "name":  "Name"
+      "name": "Name"
     },
-    "Notifications": "Notifications",
-    "New": "New"
+    "ToolTip": {
+      "setting": "Setting",
+      "language": "English"
+    }
   }
 }
