@@ -2,3 +2,4 @@ npm install --save ag-grid-community ag-grid-angular
 npm install --save @ng-bootstrap/ng-bootstrap
 npm install @ngx-translate/core --save
 npm install @ngx-translate/http-loader
+npm install --save popper.js angular-popper
