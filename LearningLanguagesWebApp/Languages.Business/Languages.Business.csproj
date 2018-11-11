@@ -41,13 +41,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WordsService.cs" />
     <Compile Include="CategoriesService.cs" />
+    <Compile Include="Interfaces\IWordsService.cs" />
     <Compile Include="Interfaces\ICategoriesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Languages.Business.Entity\Languages.Business.Entity.csproj">
       <Project>{bf6ccd7a-a75f-476d-bcd6-71101b68f9d3}</Project>
       <Name>Languages.Business.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Languages.Common\Languages.Common.csproj">
+      <Project>{ae43fe47-7e9b-4c09-bbbd-e6bf42018c83}</Project>
+      <Name>Languages.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Languages.DataLayer\Languages.DataLayer.csproj">
       <Project>{973c00c5-1596-46ca-b328-b39f9797760b}</Project>

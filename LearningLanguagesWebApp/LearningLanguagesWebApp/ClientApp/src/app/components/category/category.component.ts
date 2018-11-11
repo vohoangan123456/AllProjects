@@ -79,10 +79,6 @@ export class CategoryComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.model); }
 
-  public categorySaveChange() {
-
-  }
-
   public addNewCategory(content) {
     this.labelsLocale.popupTitle = 'Label.Category.createCategory';
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -92,7 +88,7 @@ export class CategoryComponent implements OnInit {
         this.model = new Category();
       });
     }, (reason) => {
-      //dismiss action
+      this.model = new Category();
     });
   }
 
@@ -108,7 +104,7 @@ export class CategoryComponent implements OnInit {
         this.model = new Category();
       });
     }, (reason) => {
-      //dismiss action
+      this.model = new Category();
     });
   }
 

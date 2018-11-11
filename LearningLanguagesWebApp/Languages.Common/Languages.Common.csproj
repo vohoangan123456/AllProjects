@@ -45,6 +45,7 @@
     <Compile Include="Configuration\DependencyElement.cs" />
     <Compile Include="Configuration\DependencyElementCollection.cs" />
     <Compile Include="Configuration\LanguagesConfiguration.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Interfaces\IApplicationConfigurationManager.cs" />
     <Compile Include="Interfaces\ILanguagesConfiguration.cs" />
   </ItemGroup>
@@ -76,6 +77,9 @@
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
-import { AddnewwordComponent } from './components/addnewword/addnewword.component';
+import { WordComponent } from './components/word/word.component';
 import { LearnComponent } from './components/learn/learn.component';
 import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
-  { path: 'addword', component: AddnewwordComponent, data: { title: 'Add newwords' } },
+  { path: 'addword', component: WordComponent, data: { title: 'Words' } },
   { path: 'learn', component: LearnComponent, data: { title: 'Learn' } },
-  { path: 'addcategory', component: CategoryComponent, data: { title: 'Add Category' } }
+  { path: 'addcategory', component: CategoryComponent, data: { title: 'Categories' } }
 ];
 
 @NgModule({

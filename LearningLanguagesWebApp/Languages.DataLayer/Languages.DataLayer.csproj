@@ -39,7 +39,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WordsDatalayer.cs" />
     <Compile Include="CategoriesDatalayer.cs" />
+    <Compile Include="Interfaces\IWordsDatalayer.cs" />
     <Compile Include="Interfaces\ICategoriesDatalayer.cs" />
   </ItemGroup>
   <ItemGroup>

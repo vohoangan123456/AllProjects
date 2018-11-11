@@ -9,4 +9,5 @@ export class Word {
   public translation: string;
   public note: string;
   public image: any;
+  public categoryId: number;
 }

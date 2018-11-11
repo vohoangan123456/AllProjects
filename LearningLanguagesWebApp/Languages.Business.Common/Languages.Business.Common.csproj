@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFA8A374-765C-461D-883A-C9A0A9FBEBE3}</ProjectGuid>
+    <ProjectGuid>{CE750FC1-49B5-4732-8933-598BB18615A2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Languages.Data.Query</RootNamespace>
-    <AssemblyName>Languages.Data.Query</AssemblyName>
+    <RootNamespace>Languages.Business.Common</RootNamespace>
+    <AssemblyName>Languages.Business.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,34 +37,18 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WordsProcedures.cs" />
-    <Compile Include="CategoriesProcedures.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Interfaces\IWordsProcedures.cs" />
-    <Compile Include="Interfaces\ICategoriesProcedures.cs" />
+    <Compile Include="ImageUploader.cs" />
+    <Compile Include="Interfaces\IImageUploader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Languages.Data.Common\Languages.Data.Common.csproj">
-      <Project>{93a084ca-121f-41dd-a9c5-2f39f6cd0ab8}</Project>
-      <Name>Languages.Data.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Languages.Data.Entity\Languages.Data.Entity.csproj">
-      <Project>{0e5a2fe9-8697-422a-a772-e9be9416740b}</Project>
-      <Name>Languages.Data.Entity</Name>
+    <ProjectReference Include="..\Languages.Common\Languages.Common.csproj">
+      <Project>{ae43fe47-7e9b-4c09-bbbd-e6bf42018c83}</Project>
+      <Name>Languages.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

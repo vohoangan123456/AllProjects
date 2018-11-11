@@ -10,17 +10,19 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AddnewwordComponent } from './components/addnewword/addnewword.component';
 import { LearnComponent } from './components/learn/learn.component';
 import { CategoryComponent } from './components/category/category.component';
+import { WordComponent } from './components/word/word.component';
+import { ImageCropperComponent } from './shares/image-cropper/image-cropper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddnewwordComponent,
     LearnComponent,
-    CategoryComponent
+    CategoryComponent,
+    WordComponent,
+    ImageCropperComponent
   ],
   imports: [
     BrowserModule,

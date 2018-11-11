@@ -1,7 +1,8 @@
 {
   "Message": {
     "Common": {
-      "confirmDelete": "Do you want to delete those selection?"
+      "confirmDelete": "Do you want to delete those selection?",
+      "test":  "test"
     }
   },
   "Error": {
@@ -16,6 +17,9 @@
     "cancel": "Cancel"
   },
   "Label": {
+    "Title": {
+      "application":  "Learning languages page"
+    },
     "Common": {
       "confirmTitle": "Confirmation",
       "home": "Home",
@@ -32,6 +36,20 @@
       "deleteCategory": "Delete categor(y|ies)",
       "title": "Category",
       "name": "Name"
+    },
+    "Word": {
+      "newWord": "Word",
+      "type": "Type",
+      "pronunciation": "Pronunciation",
+      "meaning": "Meaning",
+      "example": "Example",
+      "translation": "Translation",
+      "note": "Note",
+      "uploadFile": "Upload a file",
+      "createNewWord": "Create new word",
+      "editNewWord": "Edit word",
+      "deleteNewWord": "Delete Word(s)",
+      "title":  "New words"
     },
     "ToolTip": {
       "setting": "Setting",

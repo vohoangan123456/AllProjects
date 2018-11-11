@@ -47,6 +47,10 @@
       <Project>{bf6ccd7a-a75f-476d-bcd6-71101b68f9d3}</Project>
       <Name>Languages.Business.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Languages.Common\Languages.Common.csproj">
+      <Project>{ae43fe47-7e9b-4c09-bbbd-e6bf42018c83}</Project>
+      <Name>Languages.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

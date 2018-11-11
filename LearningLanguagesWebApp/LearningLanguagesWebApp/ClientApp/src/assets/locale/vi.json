@@ -1,7 +1,8 @@
 {
   "Message": {
     "Common": {
-      "confirmDelete": "Bạn có đồng ý xóa các mục đã chọn?"
+      "confirmDelete": "Bạn có đồng ý xóa các mục đã chọn?",
+      "test": "kiểm tra"
     }
   },
   "Error": {
@@ -16,6 +17,9 @@
     "cancel": "Từ chối"
   },
   "Label": {
+    "Title": {
+      "application": "Trang học ngoại ngữ"
+    },
     "Common": {
       "confirmTitle": "Xác nhận",
       "home": "Trang chủ",
@@ -32,6 +36,20 @@
       "deleteCategory": "Xóa category",
       "title": "Category",
       "name": "Tên"
+    },
+    "Word": {
+      "newWord": "Từ mới",
+      "type": "Loại từ",
+      "pronunciation": "Phát âm",
+      "meaning": "Nghĩa",
+      "example": "Câu ví dụ",
+      "translation": "Giải thích câu",
+      "note": "Ghi chú",
+      "uploadFile": "Tải ảnh lên",
+      "createNewWord": "Tạo từ mới",
+      "editNewWord": "Hiệu chỉnh từ",
+      "deleteNewWord": "Xóa từ",
+      "title": "Từ mới"
     },
     "ToolTip": {
       "setting": "Cài đặt",

@@ -1,4 +1,5 @@
 using Languages.Business;
+using Languages.Business.Common;
 using Languages.Common;
 using Languages.Common.Interfaces;
 using Languages.Data.Common;
@@ -41,9 +42,18 @@ namespace LearningLanguagesWebApp
             services.AddTransient<ILanguagesConfiguration, LanguagesConfiguration>();
             services.AddTransient<IApplicationConfigurationManager, ApplicationConfigurationManager>();
 
+            //services
             services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<IWordsService, WordsService>();
+            services.AddTransient<IImageUploader, ImageUploader>();
+
+            //procedures
             services.AddTransient<ICategoriesProcedures, CategoriesProcedures>();
+            services.AddTransient<IWordsProcedures, WordsProcedures>();
+
+            //data layers
             services.AddTransient<ICategoriesDatalayer, CategoriesDatalayer>();
+            services.AddTransient<IWordsDatalayer, WordsDatalayer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

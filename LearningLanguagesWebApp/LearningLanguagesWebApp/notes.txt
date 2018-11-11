@@ -3,3 +3,6 @@ npm install --save @ng-bootstrap/ng-bootstrap
 npm install @ngx-translate/core --save
 npm install @ngx-translate/http-loader
 npm install --save popper.js angular-popper
+npm install cropperjs
+npm install angular-cropperjs --save
+npm install --save @types/cropperjs

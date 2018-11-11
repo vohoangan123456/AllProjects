@@ -1,0 +1,169 @@
+<style>
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+    .upload-btn-wrapper .btn {
+      border: 2px solid gray;
+      color: gray;
+      background-color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+  .cropper-line,
+  .cropper-crop-box,
+  .cropper-hidden {
+    width: 500px;
+  }
+</style>
+<ng-template #content let-modal class="modal-category">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{labelsLocale.popupTitle | translate}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="row ml-0 mr-0" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="col-12">
+        <div class="row form-group">
+          <label class="col-3">{{labelsLocale.category | translate}} <span class="required">*</span></label>
+          <select (change)="selectCategory($event.target)"
+                  class="form-control col-9"
+                  [(ngModel)]="model.categoryId" name="id"
+                  required>
+            <option *ngFor="let category of categories" [ngValue]="category.id">
+              {{category.name}}
+            </option>
+          </select>
+        </div>
+        <div class="row form-group">
+          <label for="alterWord" class="col-3">{{labelsLocale.word | translate}} <span class="required">*</span></label>
+          <input type="text"
+                 name="word" [(ngModel)]="model.word"
+                 class="form-control col-9"
+                 required id="alterWord" />
+        </div>
+        <div class="row form-group">
+          <label for="alterType" class="col-3">{{labelsLocale.type | translate}}</label>
+          <input type="text"
+                 name="type" [(ngModel)]="model.type"
+                 class="form-control col-9"
+                 id="alterType" />
+        </div>
+        <div class="row form-group">
+          <label for="alterType" class="col-3">{{labelsLocale.pronunciation | translate}}</label>
+          <input type="text"
+                 name="pronunciation" [(ngModel)]="model.pronunciation"
+                 class="form-control col-9"
+                 id="alterType" />
+        </div>
+        <div class="row form-group">
+          <label for="alterMeaning" class="col-3">{{labelsLocale.meaning | translate}} <span class="required">*</span></label>
+          <input type="text"
+                 name="meaning" [(ngModel)]="model.meaning"
+                 class="form-control col-9"
+                 required id="alterMeaning" />
+        </div>
+        <div class="row form-group">
+          <label for="alterExample" class="col-3">{{labelsLocale.example | translate}}</label>
+          <input type="text"
+                 name="example" [(ngModel)]="model.example"
+                 class="form-control col-9"
+                 id="alterExample" />
+        </div>
+        <div class="row form-group">
+          <label for="alterTranslation" class="col-3">{{labelsLocale.translation | translate}}</label>
+          <input type="text"
+                 name="translation" [(ngModel)]="model.translation"
+                 class="form-control col-9"
+                 id="alterTranslation" />
+        </div>
+        <div class="row form-group">
+          <label for="alterNote" class="col-3">{{labelsLocale.note | translate}}</label>
+          <textarea rows="4"
+                    name="note" [(ngModel)]="model.note"
+                    class="form-control col-9"
+                    id="alterNote"></textarea>
+        </div>
+        <div class="row form-group">
+          <div class="upload-btn-wrapper">
+            <button class="btn mb-5">{{labelsLocale.uploadFile | translate}}</button>
+            <input type='file' (change)="onSelectFile($event)">
+          </div>
+          <img id="image" *ngIf="model.image"  [src]="model.image" height="300" alt="your image">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="col-6">
+      <button type="submit" class="btn btn-success float-right" [disabled]="disableSubmitBtn" (click)="modal.close()">{{labelsLocale.saveChange | translate}}</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #confirmDelete let-modal class="modal-category">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{labelsLocale.confirmTitle | translate}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <label>{{labelsLocale.confirmDelete | translate}}</label>
+  </div>
+  <div class="modal-footer">
+    <div class="col-6">
+      <button type="submit" class="btn btn float-right" (click)="modal.dismiss('Cancel')">{{labelsLocale.cancel | translate}}</button>
+      <button type="submit" class="btn btn-success float-right mr-10" (click)="modal.close()">{{labelsLocale.ok | translate}}</button>
+    </div>
+  </div>
+</ng-template>
+
+<ag-grid-angular #agGrid
+                 style="width: 100%; height: 500px;"
+                 class="ag-theme-balham"
+                 [enableSorting]="true"
+                 [enableFilter]="true"
+                 [rowData]="wordList"
+                 [columnDefs]="columnDefs"
+                 (gridReady)="onGridReady($event)"
+                 rowSelection="multiple"
+                 (onRowDoubleClicked)="dbClickOnRow($event)"
+                 (selectionChanged)="onSelectionChanged($event)">
+</ag-grid-angular>
+
+<div class="row pt-90">
+  <div class="col-4">
+    <button class="action-button d_green-c" (click)="addNewWord(content)">
+      <i class="typcn typcn-plus-outline d_green-c"></i>
+      <span class="action-label"> {{labelsLocale.create | translate}}</span>
+    </button>
+  </div>
+  <div class="col-4">
+    <button class="action-button d_green-c" [disabled]="selectedRow.length != 1" (click)="editWord(content)">
+      <i class="typcn typcn-edit d_green-c"></i>
+      <span class="action-label"> {{labelsLocale.edit | translate}}</span>
+    </button>
+  </div>
+  <div class="col-4">
+    <button class="action-button d_green-c" [disabled]="selectedRow.length == 0" (click)="askForRemoveWord(confirmDelete)">
+      <i class="typcn typcn-trash d_green-c"></i>
+      <span class="action-label"> {{'Message.Common.test' | translate}}</span>
+    </button>
+  </div>
+</div>

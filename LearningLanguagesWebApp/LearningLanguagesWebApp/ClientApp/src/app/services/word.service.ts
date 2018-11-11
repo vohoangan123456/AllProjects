@@ -17,7 +17,19 @@ export class WordService {
     return this.httpClient.post(`${this.API_URL}/api/words`, word );
   }
 
+  updateNewWord(word: Word) {
+    return this.httpClient.put(`${this.API_URL}/api/words/${word.id}`, word);
+  }
+
+  deleteMultipleWord(ids: any) {
+    return this.httpClient.post(`${this.API_URL}/api/words/bulkdelete`, ids);
+  }
+
+  getWordById(id: number) {
+    return this.httpClient.get(`${this.API_URL}/api/words/${id}`);
+  }
+
   getWordsByFilter() {
-    return this.httpClient.get(`${this.API_URL}/api/words`);
+    return this.httpClient.get(`${this.API_URL}/api/words/getdata`);
   }
 }

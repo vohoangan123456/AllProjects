@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddnewwordComponent } from './addnewword.component';
+import { ImageCropperComponent } from './image-cropper.component';
 
-describe('AddnewwordComponent', () => {
-  let component: AddnewwordComponent;
-  let fixture: ComponentFixture<AddnewwordComponent>;
+describe('ImageCropperComponent', () => {
+  let component: ImageCropperComponent;
+  let fixture: ComponentFixture<ImageCropperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddnewwordComponent ]
+      declarations: [ ImageCropperComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddnewwordComponent);
+    fixture = TestBed.createComponent(ImageCropperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

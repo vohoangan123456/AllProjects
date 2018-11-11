@@ -1,4 +1,5 @@
 ﻿using Languages.Business.Entity;
+using Languages.Common.Constants;
 
 namespace Languages.Data.Entity
 {
@@ -12,7 +13,16 @@ namespace Languages.Data.Entity
         public string Example { get; set; }
         public string Translation { get; set; }
         public string Note { get; set; }
-        public string Image { get; set; }
+        public string Image
+        {
+            get
+            {
+                return string.Concat(Constants.WordImageLink, Id, ".png");
+            }
+            set { }
+        }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
         public Words ToDomain()
         {
@@ -26,7 +36,9 @@ namespace Languages.Data.Entity
                 Example = Example,
                 Translation = Translation,
                 Note = Note,
-                Image = Image
+                Image = Image,
+                CategoryId = CategoryId,
+                CategoryName = CategoryName
             };
         }
     }
